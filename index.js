@@ -1,7 +1,6 @@
 const config = require('./server/config');
 const express = require('express');
 const bodyParser = require('body-parser');
-const pino = require('express-pino-logger')();
 const { videoToken } = require('./server/tokens');
 
 require('dotenv').config();
@@ -9,7 +8,6 @@ require('dotenv').config();
 const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(pino);
 
 const sendTokenResponse = (token, res) => {
   res.set('Content-Type', 'application/json');
