@@ -4,6 +4,8 @@ const bodyParser = require('body-parser');
 const pino = require('express-pino-logger')();
 const { videoToken } = require('./server/tokens');
 
+require('dotenv').config();
+
 const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
